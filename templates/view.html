@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>互联网围棋数据库</title>
+	<link rel="icon" sizes="16x16" type="image/png" href="{{url_for('static',filename='favicon.png')}}" />
+    <link rel="apple-touch-icon" sizes="60x60" type="image/png" href="/assets/img/qi60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" type="image/png" href="/assets/img/qi120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" type="image/png" href="/assets/img/qi76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" type="image/png" href="/assets/img/qi152.png" />
+	<link href="{{url_for('static',filename='jqi.replayer.css')}}" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="{{url_for('static',filename='jqi.min.js')}}"></script>
+</head>
+<body>
+	<div id="content">
+		<div data-jqi="/replay/get/{{id}}"
+			style="width: 900px;"
+			data-jqi-layout="top: ['Control'], right: ['InfoBox']"
+			data-jqi-board="showCoord: true, drawStar: true, stoneHandler: JQi.Board.drawHandlers.NORMAL">
+		</div>
+	</div>
+	<div class="jqi-page-footer">
+		<div id="footer">
+			&copy;&nbsp;1997-2020&nbsp;<a href="http://iwdb.cn/">iwdb.cn</a>			&nbsp;&nbsp;
+			<a href="/game/down/{{id}}"><img src="{{url_for('static',filename='down.png')}}" style="width:15px;height=15px;" /></a>
+		</div>
+	</div>
+</body>
+</html>

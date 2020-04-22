@@ -1,0 +1,554 @@
+/* 页面
+----------------------------------------------------------*/
+html, body {
+	font-family: Georgia, Times, "Noto Sans CJK SC", "Source Han Sans CN";
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5d5;
+}
+
+table
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a {
+	text-decoration: none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #000;
+}
+
+/* 页面容器
+----------------------------------------------------------*/
+#wrapper {
+	text-align: center;
+}
+
+/* 页头
+----------------------------------------------------------*/
+#header {
+	padding-top: 8px;
+	font-size: 14px;
+	color: #333;
+}
+
+#header .menu {
+	font-size: 14px;
+	color: #00F;
+	text-decoration: none;
+}
+
+#header .menu-hr {
+	border: 0;
+	background-color: #AAA;
+	width: 90%;
+	height: 1px;
+	margin-bottom: 0px;
+}
+
+/* 页中
+----------------------------------------------------------*/
+#content {
+	font-size: 14px;
+	color: #333;
+}
+
+/* 页脚
+----------------------------------------------------------*/
+#footer {
+	padding-top: 18px;
+	padding-bottom: 18px;
+	height: 14px;
+	font-size: medium;
+	color: #000;
+}
+
+#footer a {
+	text-decoration: none;
+}
+#footer a:link,
+#footer a:visited,
+#footer a:hover,
+#footer a:active {
+	color: #000;
+}
+
+/* 首页入口容器
+----------------------------------------------------------*/
+#entry {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px; /* 负值为自身的宽度的一半 */
+	margin-top: -142px; /* 负值为自身的高度的一半 */
+	width: 600px;
+	height: 284px; /* data-jqi tbl-game-home (height 178 + bottom 8) + #search(top 16 + height 32) + #footer(top 18 + height 14 + top 18)  */
+}
+
+/* 对局列表页搜索条容器
+----------------------------------------------------------*/
+#search-bar {
+	position: relative;
+	left: 50%;
+	margin-left: -300px; /* 负值为自身的宽度的一半 */
+	width: 600px;
+	padding-top: 16px;
+	font-size: 14px;
+	color: #333;
+}
+
+/* 搜索条
+----------------------------------------------------------*/
+#search {
+	border: 1px solid #000;
+	width: 598px; /* #entry.width - 2 */
+	height: 32px;
+	text-align: left;
+}
+#logo-icon {
+	float:left;
+	border: none;
+	height: 32px;
+	width: 32px;
+}
+#search-icon {
+	float:right;
+	border: none;
+	height: 28px;
+	width: 28px;
+	padding-top: 2px;
+	padding-right: 2px;
+	opacity: 0.6;
+}
+#search input[type="text"] {
+	vertical-align: top;
+	background-color: transparent;
+	padding-left: 6px;
+	padding-right: 6px;
+	color: #333;
+	border: 0;
+	font-size: 16px;
+	height: 30px;
+	width: 524px; /* #search.width 598 - #logo-icon.width 32 - search-icon.width (28 + right 2) - (self padding left 6 + right 6) - 2 */
+}
+
+/* 首页最新对局展示
+----------------------------------------------------------*/
+.tbl-game-home {
+	display: table;
+	width: 600px;
+	padding-bottom: 8px;
+	text-align: center;
+}
+.tbl-game-home-item {
+	display: table-row;
+}
+.tbl-game-home-item-left,
+.tbl-game-home-item-center,
+.tbl-game-home-item-right {
+	display: table-cell;
+}
+.tbl-game-home-item-left,
+.tbl-game-home-item-right {
+	width: 211px;
+}
+.tbl-game-home-item-center {
+	width: 178px;
+	text-align: left;
+}
+
+/* 对局列表
+----------------------------------------------------------*/
+.game-wrapper {
+	display: inline-block;
+}
+
+.tbl-game-wrapper {
+	display: table;
+	width: 600px;
+	padding-top: 8px;
+	border: dotted #999;
+	border-width: 0px 0px 2px 0px; /* 设置边框状粗细：上 右 下 左 */
+}
+.tbl-game-wrapper-item {
+	display: table-row;
+}
+.tbl-game-wrapper-item-left,
+.tbl-game-wrapper-item-right {
+	display: table-cell;
+	text-align: left;
+}
+.tbl-game-wrapper-item-left {
+	width: 180px;
+}
+.tbl-game-wrapper-item-right {
+	vertical-align: top;
+}
+
+.tbl-game-tools {
+	text-align: center;
+	padding-top: 8px;
+}
+
+.tbl-gameboard {
+	display: table;
+	width: 100%;
+	border: 0;
+	padding-bottom: 8px;
+}
+.tbl-gameboard-item {
+	display: table-row;
+}
+.tbl-gameboard-item-center {
+	display: table-cell;
+	border: 0;
+	vertical-align: middle;
+}
+
+.tbl-gameinfo {
+	display: table;
+	width: 100%;
+	border: 0;
+	padding-left: 10px;
+	padding-bottom: 8px;
+}
+.tbl-gameinfo-item {
+	display: table-row;
+	height: 24px;
+}
+.tbl-gameinfo-item-left,
+.tbl-gameinfo-item-right {
+	display: table-cell;
+	vertical-align: middle;
+}
+.tbl-gameinfo-item-left {
+	width: 40px;
+}
+.tbl-gameinfo-item-right {
+	text-align: left;
+}
+
+.tbl-game-nav {
+	display: inline-table;
+	width: 600px;
+	padding-top: 8px;
+	border: dotted #999;
+	border-width: 0px 0px 2px 0px; /* 设置边框状粗细：上 右 下 左 */
+	font-size: 14px;
+}
+.tbl-game-nav-item {
+	display: table-row;
+	height: 32px;
+}
+.tbl-game-nav-item-left,
+.tbl-game-nav-item-center,
+.tbl-game-nav-item-right {
+	display: table-cell;
+	vertical-align: middle;
+}
+.tbl-game-nav-item-left {
+	width: 60px;
+	text-align: left;
+}
+.tbl-game-nav-item-center {
+	width: 480px;
+}
+.tbl-game-nav-item-right {
+	width: 60px;
+	text-align: right;
+}
+
+/* 编辑对局
+----------------------------------------------------------*/
+.tbl-edit-list {
+	display: inline-table;
+	width: 600px;
+	text-align: left;
+	color: #000;
+}
+.tbl-edit-list-sub {
+	display: inline-table;
+	width: 560px; /*short-value name short-value*/
+	text-align: left;
+	color: #000;
+}
+.tbl-edit-list-item {
+	display: table-row;
+	height: 32px;
+}
+.tbl-edit-list-item-name,
+.tbl-edit-list-item-value-short,
+.tbl-edit-list-item-value-long {
+	display: table-cell;
+	vertical-align: middle;
+}
+.tbl-edit-list-item-name {
+	width: 40px;
+}
+.tbl-edit-list-item-value-long {
+	width: 560px;/* edit-line-long, edit-area width: 540px */
+}
+.tbl-edit-list-item-value-short {
+	width: 260px; /* edit-line width: 240px */
+}
+
+/* 短列表：用于显示“项目、操作”等二列表格
+----------------------------------------------------------*/
+.tbl_short-list {
+	display: inline-table;
+	width: 300px;
+	text-align: center;
+	color: #000;
+	padding-top: 8px;
+}
+.tbl_short-list-item {
+	display: table-row;
+	height: 32px;
+}
+.tbl_short-list-item-name,
+.tbl_short-list-item-action {
+	display: table-cell;
+	border-bottom: 1px dotted #999;
+	vertical-align: middle;
+}
+.tbl_short-list-item-name {
+	width: 80%;
+	text-align: left;
+}
+.tbl_short-list-item-action {
+	width: 20%;
+}
+
+/* 选项列表
+----------------------------------------------------------*/
+.tbl-option-list {
+	display: inline-table;
+	width: 600px;
+	text-align: center;
+	color: #000;
+}
+.tbl-option-list-item {
+	display: table-row;
+	height: 56px;
+}
+.tbl-option-list-item-title {
+	display: table-row;
+	height: 32px;
+}
+.tbl-option-list-item-name,
+.tbl-option-list-item-value,
+.tbl-option-list-item-action {
+	display: table-cell;
+	border-bottom: 1px dotted #999;
+	vertical-align: middle;
+}
+.tbl-option-list-item-name {
+	width: 40%;
+	text-align: left;
+}
+.tbl-option-list-item-value {
+	width: 40%;
+}
+.tbl-option-list-item-action {
+	width: 20%;
+}
+
+/* 用户
+----------------------------------------------------------*/
+.tbl-user-list {
+	display: inline-table;
+	width: 300px;
+	text-align: center;
+	color: #000;
+}
+.tbl-user-list-item {
+	display: table-row;
+	height: 32px;
+}
+.tbl-user-list-item-name,
+.tbl-user-list-item-value {
+	display: table-cell;
+	border-bottom: 1px dotted #999;
+	vertical-align: middle;
+}
+.tbl-user-list-item-name {
+	width: 20%;
+}
+.tbl-user-list-item-value {
+	width: 80%;
+}
+
+/* 文本框
+----------------------------------------------------------*/
+.edit-line {
+	display: inline-block;
+	padding-left: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	width: 240px;
+	height: 24px;
+	font-size: 14px;
+}
+
+.edit-line-long {
+	display: inline-block;
+	padding-left: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	width: 540px;
+	height: 24px;
+	font-size: 14px;
+}
+
+.edit-area {
+	display: inline-block;
+	padding-left: 4px;
+	margin-top: 8px;
+	width: 540px;
+	height: 200px;
+	font-size: 14px;
+}
+
+/* 杂项
+----------------------------------------------------------*/
+
+.icon {
+	border: none;
+	width: 16px;
+	height: 15px;
+	margin-right: 8px;
+}
+
+.icon-full {
+	border: none;
+	margin-right: 8px;
+}
+
+.toolbar {
+	vertical-align: middle;
+	margin-left: 8px;
+	opacity: 0.6;
+}
+
+.friend-links {
+	border: none;
+	margin-left: 8px;
+	width: 13px;
+	height: 13px;
+	opacity: 0.4;
+}
+
+.spacing {
+	padding-top: 4px;
+}
+
+/* 文件上传控件
+----------------------------------------------------------*/
+.file {
+	position: relative;
+	display: inline-block;
+	margin-top: 8px;
+	background: #DDD;
+	border: 1px dotted #555;
+	border-radius: 4px;
+	padding: 4px 12px;
+	overflow: hidden;
+	color: #333;
+	text-decoration: none;
+	text-indent: 0;
+	line-height: 24px;
+}
+.file input {
+	position: absolute;
+	right: 0;
+	top: 0;
+	opacity: 0;
+}
+.file:hover {
+	background: #BBB;
+	border-color: #555;
+}
+
+/* 按钮
+----------------------------------------------------------*/
+.bsubmit { /* button submit*/
+	box-sizing: border-box;
+	display: inline-block;
+	cursor: pointer;
+	background: #DDD;
+	color: #333;
+	border: 1px solid #555;
+	border-radius: 4px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	width: 80px;
+	height: 32px;
+}
+.bsubmit:hover {
+	background: #BBB;
+	border-color: #555;
+	color: #FFF;
+}
+
+.alink { /* a link */
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer;
+	background: #DDD;
+	color: #333;
+	border: 1px solid #555;
+	border-radius: 4px;
+	margin-top: 16px;
+	width: 80px;
+	height: 32px;
+	padding-top: 4px;
+}
+.alink:hover {
+	background: #BBB;
+	border-color: #555;
+	color: #FFF;
+}
+
+/* 文本
+----------------------------------------------------------*/
+.archive {
+	margin-left: 16px;
+	margin-right: 16px;
+	font-size: medium;
+}
+
+.archive a {
+	text-decoration: underline;
+}
+.archive a:link,
+.archive a:visited,
+.archive a:hover,
+.archive a:active {
+	color: blue;
+}
+
+.message {
+	margin-top: 16px;
+	font-size: 14px;
+	color: #777;
+}
+
+.comment {
+	font-size: 14px;
+	font-style: italic;
+	color: #888;
+}
+
+.section {
+	font-weight: bold;
+}
+
+.note {
+	color: #888;
+	font-style: italic;
+}

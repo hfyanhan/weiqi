@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>互联网围棋数据库</title>
+	<link rel="icon" sizes="16x16" type="image/png" href="{{url_for('static',filename='favicon.png')}}" />
+	<link rel="apple-touch-icon" sizes="60x60" type="image/png" href="/assets/img/qi60.png" />
+	<link rel="apple-touch-icon" sizes="120x120" type="image/png" href="/assets/img/qi120.png" />
+	<link rel="apple-touch-icon" sizes="76x76" type="image/png" href="/assets/img/qi76.png" />
+	<link rel="apple-touch-icon" sizes="152x152" type="image/png" href="/assets/img/qi152.png" />
+	<link href="{{url_for('static',filename='main.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{url_for('static',filename='jqi.replayer.css')}}" rel="stylesheet" type="text/css" />
+	<script src="{{url_for('static',filename='jqi.min.js')}}" type="text/javascript"></script>
+</head>
+<body>
+	<div id="entry">
+		<div class="tbl-game-home">
+			<div class="tbl-game-home-item">
+				<div class="tbl-game-home-item-left"></div>
+				<div class="tbl-game-home-item-center">
+					<a href="/replay/view/4a27ab26723caa3e" target="_blank">
+					<div data-jqi-diagram="/welcome/get/4a27ab26723caa3e"
+						data-jqi-board="drawStar: false, stoneHandler: JQi.Board.drawHandlers.NORMAL">
+					</div>
+					</a>
+				</div>
+				<div class="tbl-game-home-item-right"></div>
+			</div>
+		</div>
+		<div id="search">
+			<form action="/game/search/0" method="post" accept-charset="utf-8">
+<a href="/qi" target="_blank"><img id="logo-icon" src="{{url_for('static',filename='qi32.png')}}" title="" /></a><input id="search_text" name="search_text" type="text"/><a href="javascript:document.forms[0].submit();"><img id="search-icon" src="{{url_for('static',filename='search.png')}}" /></a>
+</form>		</div>
+		<div id="wrapper">
+			<div id="footer">&copy;&nbsp;1997-2020&nbsp;<a href="http://iwdb.cn/">iwdb.cn</a></div>
+		</div>
+	</div>
+</body>
+</html>

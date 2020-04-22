@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>互联网围棋数据库</title>
+	<link rel="icon" sizes="16x16" type="image/png" href="{{url_for('static',filename='favicon.png')}}" />
+	<link rel="apple-touch-icon" sizes="60x60" type="image/png" href="/assets/img/qi60.png" />
+	<link rel="apple-touch-icon" sizes="120x120" type="image/png" href="/assets/img/qi120.png" />
+	<link rel="apple-touch-icon" sizes="76x76" type="image/png" href="/assets/img/qi76.png" />
+	<link rel="apple-touch-icon" sizes="152x152" type="image/png" href="/assets/img/qi152.png" />
+	<link href="{{url_for('static',filename='main.css')}}" rel="stylesheet" type="text/css" />
+</head>
+<body class="archive">
+	<p class="note">尧造围棋，丹朱善之。<br />—— 《世本·作篇》</p>
+	<p>围棋自然、优雅，是世界上最古老、最复杂、最迷人的棋盘游戏。</p>
+	<p>一幅图片就可以记录一个完整的围棋对局。<br /><img id="game-sample" src="{{url_for('static',filename='c6e64a99afda87f9.png')}}" title="" /></p>
+	<p>文本棋谱，推荐使用 <a href="/sgf" target="_blank">Smart Game Format</a> 文件格式。</p>
+	<div id="footer">&copy;&nbsp;1997-2020&nbsp;<a href="http://iwdb.cn/">iwdb.cn</a></div>
+</body>
+</html>
